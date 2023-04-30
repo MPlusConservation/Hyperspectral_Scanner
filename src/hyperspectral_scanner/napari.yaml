@@ -1,0 +1,48 @@
+name: Hyperspectral_Scanner
+display_name: HSI
+contributions:
+  commands:
+    - id: Hyperspectral_Scanner.get_reader
+      python_name: hyperspectral_scanner._reader:napari_get_reader
+      title: Open data with HSI
+    - id: Hyperspectral_Scanner.write_multiple
+      python_name: hyperspectral_scanner._writer:write_multiple
+      title: Save multi-layer data with HSI
+    - id: Hyperspectral_Scanner.write_single_image
+      python_name: hyperspectral_scanner._writer:write_single_image
+      title: Save image data with HSI
+    - id: Hyperspectral_Scanner.make_sample_data
+      python_name: hyperspectral_scanner._sample_data:make_sample_data
+      title: Load sample data from HSI
+    - id: Hyperspectral_Scanner.make_qwidget
+      python_name: hyperspectral_scanner._widget:ExampleQWidget
+      title: Make example QWidget
+    - id: Hyperspectral_Scanner.make_magic_widget
+      python_name: hyperspectral_scanner._widget:example_magic_widget
+      title: Make example magic widget
+    - id: Hyperspectral_Scanner.make_func_widget
+      python_name: hyperspectral_scanner._widget:example_function_widget
+      title: Make example function widget
+  readers:
+    - command: Hyperspectral_Scanner.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy']
+  writers:
+    - command: Hyperspectral_Scanner.write_multiple
+      layer_types: ['image*','labels*']
+      filename_extensions: []
+    - command: Hyperspectral_Scanner.write_single_image
+      layer_types: ['image']
+      filename_extensions: ['.npy']
+  sample_data:
+    - command: Hyperspectral_Scanner.make_sample_data
+      display_name: HSI
+      key: unique_id.1
+  widgets:
+    - command: Hyperspectral_Scanner.make_qwidget
+      display_name: Example QWidget
+    - command: Hyperspectral_Scanner.make_magic_widget
+      display_name: Example Magic Widget
+    - command: Hyperspectral_Scanner.make_func_widget
+      autogenerate: true
+      display_name: Example Function Widget
