@@ -15,8 +15,8 @@ contributions:
       python_name: hyperspectral_scanner._sample_data:make_sample_data
       title: Load sample data from HSI
     - id: Hyperspectral_Scanner.make_qwidget
-      python_name: hyperspectral_scanner._widget:ExampleQWidget
-      title: Make example QWidget
+      python_name: hyperspectral_scanner._widget:collect_scan
+      title: collect_scan
     - id: Hyperspectral_Scanner.make_magic_widget
       python_name: hyperspectral_scanner._widget:example_magic_widget
       title: Make example magic widget
